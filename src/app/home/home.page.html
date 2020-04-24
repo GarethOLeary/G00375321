@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-title>
-      Blank
+      GLWeather App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!--Image for homepage-->
+  <img width="300" height="170" src="../assets/img/weather.png" />
+  <br><br>
+  <!-- Each button takes you to the correspnding page and some styling added -->
+  <ion-button [routerLink]="['/weather']" expand="block" color="medium" shape="round">Weather</ion-button>
+  <br>
+  <ion-button [routerLink]="['/cities']" expand="block" color="medium" shape="round">City</ion-button>
+  <br>
+  <ion-button [routerLink]="['/about']" expand="block" color="medium" shape="round">About</ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
 </ion-content>
+<!-- Footer for the homepage-->
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>
+      GMIT 2020
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

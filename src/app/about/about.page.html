@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <!-- back button to home page-->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- image added to page-->
+  <img width="300" height="170" src="../assets/img/about.jpg" /> 
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <!-- put all items in a list and styled them-->
+          <ion-item color="danger">
+            <strong>App Name: </strong> GLWeather 
+          </ion-item>
+
+          <ion-item color="danger">
+             <strong>Contact: </strong> G00375321@gmit.ie
+           </ion-item>
+
+           <ion-item color="danger">
+               <strong>Version: </strong> Browser, IOS and Android.
+             </ion-item>
+
+             <ion-item color="danger">
+              <strong>Latitude: </strong> {{lat}}<!--calls -->
+            </ion-item>
+
+            <ion-item color="danger">
+              <strong>Longitude: </strong>{{long}}<!-- calls-->
+            </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- button to get coordinates of your location with css styling -->
+  <!--ionic plugin used and calls method-->
+  <br>
+  <ion-button (click)="locationMethod()" color="medium" expand="block" shape="round">Get Geolocation coordinates now!</ion-button>
+  <br>
+  
+</ion-content>
+<!-- footer-->
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>
+      GMIT 2020
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

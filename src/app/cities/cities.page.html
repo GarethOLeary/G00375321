@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <!-- back button to home page-->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pick City</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- image added-->
+  <img width="300" height="170" src="../assets/img/city.png" />
+  <!-- heading added-->
+  <h2 class="class">Search city name to get weather forecast</h2>
+  <ion-grid>
+    <!-- ion grid used -->
+    <ion-row>
+    <ion-col width-100>
+      <ion-list>
+        
+        <br>
+        <!-- form for binding and passing object in class-->
+        <form (ngSubmit)="saveForm()">
+        <ion-item color="primary">
+          <ion-label fixed>
+            City
+          </ion-label>
+          <!-- user input for picking city -->
+          <!-- ngmodel for two way binding-->
+          <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <!-- saves the city of your choice and changes the weather page-->
+        <button ion-button type="submit" block >Save Changes to City</button>
+      </form>
+      </ion-list>
+
+    </ion-col>
+  </ion-row></ion-grid>
+</ion-content>
+<!-- footer-->
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>
+      GMIT 2020
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

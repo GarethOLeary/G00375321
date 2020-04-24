@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <!--Back button to homepage-->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Weather</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <!--added ion grid for layout-->
+  <h1 font-weight:bold></h1>
+  <ion-grid *ngIf="weather">
+    <!-- div to cntre text-->
+    <div id="container">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <!-- reads the name of the city and outputs -->
+        <h2 class="location">{{weather.name}}</h2>
+        <!-- displays the weather forecast for each city-->
+       <div class="icon"><img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt="" width="100" height="50"></div>
+       <!-- reads and displays temperature -->
+       <!-- temp was given in kelvin so Had to subtract 273.15-->
+      <h1 class="temp">{{weather.main.temp - 273.15 | number:'1.1-5'}}&deg;C</h1>
+      <!-- reads and displays main forecast -->
+      <h1 class="desc">{{weather.weather[0].main}}</h1>
+      </ion-col>
+    </ion-row>
+  </div>
+    <ion-row>
+      <ion-col width=100>
+      
+        <ion-list >
+          <!-- reads and displays humidity, pressure , visibility and description of forecast-->
+          <!-- styling added to list-->
+            <ion-item color="danger"> <strong>Humidity: </strong>{{weather.main.humidity}}%</ion-item>
+          </ion-list>
+          <ion-list>
+              <ion-item color="danger"> <strong>Pressure: </strong>{{weather.main.pressure}}hpa</ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-item color="danger"> <strong>Visibiltiy: </strong>{{weather.visibility}}</ion-item>
+              </ion-list>
+              <ion-list>
+                  <ion-item color="danger"> <strong>Description: </strong>{{weather.weather[0].description}}</ion-item>
+                </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<!-- footer -->
+<ion-footer>
+  <ion-toolbar color="danger">
+    <ion-title>
+      GMIT 2020
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
